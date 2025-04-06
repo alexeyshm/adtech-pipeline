@@ -11,7 +11,7 @@ CLICKHOUSE_USER = os.environ.get("CLICKHOUSE_USER", "default")
 CLICKHOUSE_PW = os.environ.get("CLICKHOUSE_PW", "default")
 
 
-class ClickhouseAnaliser:
+class ClickhouseAnalizer:
     def __init__(self, date_start: str = None, date_end: str = None, campaign_ids: list = None):
         self.client = clickhouse_connect.get_client(
             host=CLICKHOUSE_HOST, username=CLICKHOUSE_USER, password=CLICKHOUSE_PW
@@ -144,5 +144,5 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    analyser = ClickhouseAnaliser(args.date_start, args.date_end, args.campaign_ids)
+    analyser = ClickhouseAnalizer(args.date_start, args.date_end, args.campaign_ids)
     analyser.analyse_campaigns()
