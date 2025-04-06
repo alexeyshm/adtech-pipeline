@@ -1,4 +1,5 @@
-CREATE TABLE IF NOT EXISTS campaign_stats
+DROP TABLE IF EXISTS campaign_stats;
+CREATE TABLE campaign_stats
 (
     campaign_id UInt32 NOT NULL,
     campaign_name String,
@@ -12,7 +13,8 @@ CREATE TABLE IF NOT EXISTS campaign_stats
 ENGINE = MergeTree()
 PRIMARY KEY (campaign_id);
 
-CREATE TABLE IF NOT EXISTS daily_clicks
+DROP TABLE IF EXISTS daily_clicks;
+CREATE TABLE daily_clicks
 (
     campaign_id UInt32 NOT NULL,
     date Date NOT NULL,
@@ -21,7 +23,8 @@ CREATE TABLE IF NOT EXISTS daily_clicks
 ENGINE = MergeTree()
 PRIMARY KEY (campaign_id, date);
 
-CREATE TABLE IF NOT EXISTS daily_impressions
+DROP TABLE IF EXISTS daily_impressions;
+CREATE TABLE daily_impressions
 (
     campaign_id UInt32 NOT NULL,
     date Date NOT NULL,
