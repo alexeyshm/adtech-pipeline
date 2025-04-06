@@ -30,9 +30,9 @@ Schema contains three tables, which are used to calculate required KPIs. Since i
 
 This script has 3 optional arguments:
 
-*campaign_ids - to analyze only specific campaigns, e.g.`python analytics.py --campaign_ids 22 33 34`
-*date_start - Start date for analysis (YYYY-MM-DD)
-*date_end - End date for analysis (YYYY-MM-DD)
+* campaign_ids - to analyze only specific campaigns, e.g.`python analytics.py --campaign_ids 22 33 34`
+* date_start - Start date for analysis (YYYY-MM-DD)
+* date_end - End date for analysis (YYYY-MM-DD)
 
 Date arguments will apply only to fetch daily clicks and impressions, they will not affect other queries. Example:
 `python analytics.py --date_start 2025-04-03 --date_end 2025-04-04`
