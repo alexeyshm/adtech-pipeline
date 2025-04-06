@@ -22,9 +22,7 @@ Schema contains three tables, which are used to calculate required KPIs. Since i
 
 3. Navigate to 'solution' directory and build a docker image: `docker build . -t adtech`
 
-
-4. Run the container. `--network="host"` argument is needed to access local DB instances.
-`docker run -it --network="host" adtech`
+4. Run the container: `docker run -it --network="host" adtech`
 
 5. To run ClickHouse enrichment pipeline: `python clickhouse_enrichment.py`
 
