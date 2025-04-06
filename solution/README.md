@@ -14,7 +14,7 @@ Schema contains three tables, which are used to calculate required KPIs. Since i
 
 **clicks** - Same as above, but for clicks.
 
-## Setup
+## Usage
 
 1. Set up DB instances and populate PostgreSQL DB, as described in the task. Please, use the **docker-compose.yaml** from this fork, as it has a adjustment: ClickHouse DB is initialized with default user and password, the same values are used for enrichments. Passwordless authentication was not possible from used Python solution and will throw an error.
 
