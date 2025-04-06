@@ -47,7 +47,12 @@ services:
       - "8123:8123"
       - "9000:9000"
     volumes:
-      - clickhouse_data:/var/lib/clickhouse
+      - clickhouse_data:/var/lib/clickhousedocker exec -it 
+    environment: # added user information, as it's not possible to connect from python useing passwordless authentication
+      CLICKHOUSE_USER: default
+      CLICKHOUSE_PASSWORD: default
+      CLICKHOUSE_DB: ad_campaign
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
     healthcheck:
       test: ["CMD", "clickhouse-client", "--query", "SELECT 1"]
       interval: 5s
@@ -62,7 +67,7 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-        restart: true
+        #restart: true
     command: -url=jdbc:postgresql://postgres:5432/postgres -user=postgres -locations=filesystem:/flyway/sql migrate
     volumes:
       - ./migrations/:/flyway/sql
